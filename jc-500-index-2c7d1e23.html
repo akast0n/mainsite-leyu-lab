@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>500彩票网 · 日常查询与数据对照</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fde3c8 0%, #f7c9a0 40%, #f1b27b 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      line-height: 1.7;
+      color: #2e241b;
+    }
+
+    .page-card {
+      max-width: 820px;
+      width: 100%;
+      background: #fffcf7;
+      border-radius: 36px 12px 36px 12px;
+      box-shadow: 0 20px 40px -10px rgba(120, 70, 30, 0.25), 0 8px 16px rgba(0,0,0,0.03);
+      padding: 2.5rem 2.8rem;
+      transition: all 0.2s ease;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      margin-top: 0.2rem;
+      margin-bottom: 0.25rem;
+      background: linear-gradient(135deg, #b55e2a, #8a421e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: #7f5f44;
+      border-left: 4px solid #e9b384;
+      padding-left: 1rem;
+      margin: 0.25rem 0 1.8rem 0;
+      font-style: italic;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 520;
+      color: #5d3a21;
+      margin-top: 2.2rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px dashed #e7cfb5;
+      padding-bottom: 0.25rem;
+    }
+
+    .summary-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 1.8rem;
+      margin: 1.2rem 0 0.5rem;
+    }
+    .summary-item {
+      flex: 1 1 180px;
+      background: #fbf3ea;
+      padding: 0.75rem 1rem;
+      border-radius: 60px 12px 12px 60px;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 6px rgba(140, 85, 40, 0.04);
+    }
+    .summary-item strong {
+      color: #a35728;
+      display: block;
+      font-weight: 550;
+      margin-bottom: 0.1rem;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    .highlight-capsule {
+      display: inline-block;
+      background: #f0ddd0;
+      padding: 0.1rem 0.9rem;
+      border-radius: 30px;
+      color: #572e15;
+      font-weight: 480;
+      font-size: 0.9rem;
+      margin: 0.3rem 0.2rem;
+    }
+
+    .scenario-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1rem;
+      margin: 1.2rem 0;
+    }
+    .scenario-card {
+      background: #f7eee5;
+      padding: 1rem 1.1rem;
+      border-radius: 24px 8px 24px 8px;
+      border: 1px solid #ebd6c2;
+      transition: 0.15s;
+    }
+    .scenario-card h3 {
+      font-size: 1rem;
+      font-weight: 540;
+      color: #623b20;
+      margin-bottom: 0.2rem;
+    }
+    .scenario-card p {
+      font-size: 0.9rem;
+      margin: 0.15rem 0;
+      color: #3e2c1e;
+    }
+
+    .faq-mini {
+      background: #faf2e9;
+      padding: 1.2rem 1.5rem;
+      border-radius: 24px 8px 24px 8px;
+      margin: 1.8rem 0;
+      border-left: 6px solid #dba77b;
+    }
+    .faq-mini dt {
+      font-weight: 530;
+      color: #4c311b;
+      margin-top: 0.6rem;
+    }
+    .faq-mini dd {
+      margin-left: 1.2rem;
+      color: #3e2b1b;
+      font-size: 0.95rem;
+    }
+
+    .note-box {
+      background: #f2e3d6;
+      border-radius: 28px 6px 28px 6px;
+      padding: 1.2rem 1.6rem;
+      margin: 1.8rem 0 1rem;
+      font-size: 0.92rem;
+      color: #2a1d12;
+    }
+
+    .cta-link {
+      display: inline-block;
+      background: #dba77b;
+      color: #2a1d12;
+      padding: 0.35rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 460;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 3px 6px rgba(110, 60, 20, 0.08);
+    }
+    .cta-link:hover {
+      background: #c88f62;
+      transform: scale(1.02);
+    }
+
+    a {
+      color: #924f22;
+      text-decoration: underline;
+      text-underline-offset: 0.2rem;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #dbb594;
+    }
+    a:hover {
+      color: #633415;
+      text-decoration-color: #924f22;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #674d38;
+      margin-top: 1.8rem;
+      border-top: 1px solid #e3cfbc;
+      padding-top: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .page-card {
+        padding: 1.8rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .summary-grid {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-card">
+    <h1>500彩票网 · 查询与对照</h1>
+    <div class="hero-sub">日常参考·数字延伸·自主阅读</div>
+
+    <p>对于经常需要浏览数字类资讯的用户而言，一个清晰、稳定的查询工具本身就是日常的一部分。<a href="https://jc-500.com">500彩票网</a> 提供了一种轻量的参照方式，帮助人们快速检索公开数据、了解常见走势与分布。它更像一本可翻阅的参考册，而非决策指南。</p>
+
+    <div class="summary-grid">
+      <div class="summary-item"><strong>摘要</strong>面向普通用户的公开数据查询界面，侧重数字排列、对照展示与过往记录。</div>
+      <div class="summary-item"><strong>定位</strong>辅助阅读与信息整理，不构成任何操作指引或建议。</div>
+    </div>
+
+    <h2>主要特点</h2>
+    <p>页面结构强调清晰的分组与可读性。常用功能包括按时间、类型筛选，以及历史数据的文本化呈现。整体设计追求直接的视觉反馈——浅色背景、适度对比、圆矩形的按钮感链接，减少认知负担。</p>
+    <p>
+      <span class="highlight-capsule">📊 数据排列</span>
+      <span class="highlight-capsule">📅 时间分段</span>
+      <span class="highlight-capsule">🔍 关键词过滤</span>
+      <span class="highlight-capsule">📋 对照视图</span>
+    </p>
+
+    <h2>常见使用场景</h2>
+    <div class="scenario-cards">
+      <div class="scenario-card">
+        <h3>日常对照</h3>
+        <p>随手翻阅近期数字分布，了解大致区间与出现频次。</p>
+      </div>
+      <div class="scenario-card">
+        <h3>延伸阅读</h3>
+        <p>搭配其他公开资料，进行趋势观察或数据比对。</p>
+      </div>
+      <div class="scenario-card">
+        <h3>快速检索</h3>
+        <p>按特定数字或组合查找过往记录，节省手动整理时间。</p>
+      </div>
+      <div class="scenario-card">
+        <h3>安静浏览</h3>
+        <p>无弹窗干扰的版面，适合专注阅读与自行记录。</p>
+      </div>
+    </div>
+
+    <h2>使用建议</h2>
+    <p>将 <strong>500彩票网</strong> 视为一个信息窗口，而非分析工具。建议每次查询后自己做简单笔记——手写或数字皆可——形成自己的观察习惯。数据本身只反映过去，不预示未来。保持开放心态，不依赖单一来源。</p>
+
+    <div class="faq-mini">
+      <dl>
+        <dt>❓ 这个网站提供预测吗？</dt>
+        <dd>不提供。它仅展示历史数据和当前公开列表，不含算法推荐或趋势断言。</dd>
+        <dt>❓ 数据更新频率如何？</dt>
+        <dd>参照公开数据源的发布节奏，但建议以官方权威渠道为最终依据。</dd>
+        <dt>❓ 是否适合初学者？</dt>
+        <dd>界面直观，无需注册即可浏览，适合任何仅需查阅的用户。</dd>
+      </dl>
+    </div>
+
+    <div class="note-box">
+      ⚡ 可信但克制的说明：本页面仅作介绍用途。所有数据及功能均来自 <a href="https://jc-500.com">500彩票网</a>，使用者应自行核对信息并理性参考。不鼓励过度依赖或超出个人判断范围的使用方式。
+    </div>
+
+    <p style="margin-top: 2rem; text-align: right; font-size: 0.95rem;">
+      —— 从日常查询到延伸阅读，保持简单与清醒。
+    </p>
+
+    <div class="footer-note">
+      介绍页面 · 产品说明式摘要 · 仅供个人参考
+    </div>
+  </div>
+</body>
+</html>
